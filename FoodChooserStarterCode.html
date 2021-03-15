@@ -1,0 +1,83 @@
+<html>
+    <head>
+      <script>
+         function ageCheck()
+         {
+
+             var year = document.getElementById("byear").value;
+
+               year = parseInt(year); //force x to be an integer
+               var age = 2021 - year;
+               if (age > 10)
+               {
+                   document.getElementById("pic1").innerHTML = "<img  src ='icecream.png' onclick = 'printNo()'>";
+                   document.getElementById("pic2").innerHTML = "<img  src ='pizza.png' onclick = 'printNo()'>";
+                   document.getElementById("pic3").innerHTML = "<img  src ='yogurt.png' onclick = 'printYes()'>";
+                }
+                else {
+                  document.getElementById("pic1").innerHTML = "<img  src ='cake.png' onclick = 'printNo()'>";
+                  document.getElementById("pic2").innerHTML = "<img  src ='chocolate.png' onclick = 'printNo()'>";
+                  document.getElementById("pic3").innerHTML = "<img  src ='salad.png' onclick = 'printYes()'>";
+                }
+           }      //Remember I am looking for some error checking.
+           function getImage()
+           {
+             document.getElementById('pic1').innerHTML = "<hr>This is not healthy <br><img src = 'cake.png'>";
+           }
+
+         function printYes()
+         {
+                document.getElementById("message").innerHTML = "Yes Good!";
+         }
+         function printNo()
+         {
+             document.getElementById("message").innerHTML = "No bad!";
+         }
+      </script>
+    </head>
+<style>
+img{
+  border: 10px solid #090909
+  width: 150px;
+  height: 150px;
+}
+hr{
+  border: 3px dashed #906712
+}
+h1{
+  font-size: 100px;
+  color: #781234;
+}
+p{
+  font-style: italic;
+  font-family: sans-serif;
+  color: #991299
+}
+body{
+  background color: #347645
+
+}
+
+</style>
+    <body>
+
+
+
+
+       <h1>FoodChooser</h1>
+       <p>Type your birthyear to choose some foods for you they will tell you if their healthy or not</p>
+       <input type = "text" value = "Type Birth Year" id = "byear">
+       <input type = "button" value = "Submit" onclick = "ageCheck()" id = "sButton">
+
+       <table>
+         <tr>
+           <td id = "pic1"> </td>
+           <td id = "pic2"> </td>
+           <td id = "pic3"> </td>
+           </tr>
+         </table>
+
+
+       <p id = "message"></p><!--Yes or No Message gets sent here-->
+    </body>
+</html>
